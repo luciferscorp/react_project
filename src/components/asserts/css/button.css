@@ -1,0 +1,14 @@
+.submitButton {
+    font-size: 15px;
+    border-radius: 7px;
+    color: rgb(237, 238, 243);
+    border-color: #a7a7a91b;
+    background-color: #6e758377;
+    padding: 8px 25px;
+    border-style: solid;
+  }
+  .submitButton:hover {
+    color: #2d2d2d;
+    background-color: rgba(191, 191, 191, 0.319);
+    border-color: #8f8f8f;
+  }
