@@ -11,10 +11,25 @@ import Admin from "./components/screen/Admin/Admincompany.js";
 import Employee from "./components/screen/Employee/Employee.js";
 import Company from "./components/screen/Company/Company.js";
 import Test from "./components/screen/Test/Test.js";
+ 
 
 function PrivateRoute({ component: Component, ...rest }) {
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
-  const userType = localStorage.getItem("userType");
+
+  const isLoggedIn =false
+ const userType = localStorage.getItem("userType") || 1;
+
+  
+  function getItemFromLocal(localData) {
+    let form_data = JSON.parse(localStorage.getItem(localData));
+    return form_data;
+  }
+
+  const userData = getItemFromLocal("user_local");
+
+  if (userData!==null){
+    isLoggedIn = true;
+  }
+  
 
   // Add your logic to restrict access based on user type and isLoggedIn
   // For example, if userType is "admin" and isLoggedIn is true, allow access to the route
@@ -26,6 +41,7 @@ function PrivateRoute({ component: Component, ...rest }) {
     />
   );
 }
+
 
 function App() {
   const router = createBrowserRouter();
